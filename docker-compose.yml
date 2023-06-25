@@ -7,8 +7,13 @@ services:
       - '3000:3000'
     volumes:
       - ./backend:/app
+    environment:
+      - NODE_ENV=development
+        
   frontend:
     image: todolist-frontend
     container_name: frontend-container
     ports:
       - '5173:5173'
+    environment:
+      - NODE_ENV=development
