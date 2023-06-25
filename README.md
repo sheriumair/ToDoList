@@ -1,5 +1,6 @@
 
-# ToDoList Application
+# ToDoList Application![Frontend](https://github.com/sheriumair/ToDoList/assets/53410074/d6f3cf06-7347-4578-8eee-6821c2f7791d)
+
 
 The ToDoList application is a simple web-based task management tool that allows users to create and manage their to-do tasks.
 
@@ -29,7 +30,7 @@ The ToDoList application is a simple web-based task management tool that allows 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/todo-list.git
+   [git clone https://github.com/your-username/todo-list.git](https://github.com/sheriumair/ToDoList.git)
 
 2. Navigate to Project directory
       cd ToDoList
