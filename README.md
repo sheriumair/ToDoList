@@ -32,13 +32,16 @@ The ToDoList application is a simple web-based task management tool that allows 
    ```bash
    [git clone https://github.com/your-username/todo-list.git](https://github.com/sheriumair/ToDoList.git)
 
-2. Navigate to Project directory
+2. Navigate to the Project directory
+
       cd ToDoList
 
 3. Make a .env file for backend. Here add Mongo Db connection URL. The variable name is as shown below
+
     DB_Connection:
 
 4.  Build and run the Docker containers:
+
     docker-compose up -d
 
 
