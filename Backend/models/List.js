@@ -5,7 +5,12 @@ const mongoose=require('mongoose');
 
 
 const ToDoSchema=mongoose.Schema({
-    task: {
+  key: {
+    type: String,
+    required: true,
+    unique: true
+  },
+     task: {
         type: String,
         required: true,
       },

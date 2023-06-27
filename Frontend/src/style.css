@@ -1,18 +1,8 @@
-
-
 * {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
   }
- /* body {
-    background: #333;
-    color: hsl(200, 100%, 90%);
-    max-width: 400px;
-    padding: 1rem;
-    margin: 0 auto;
-    background-image:url('../public/bridge.jpeg');
-    background-size:cover;
-  }*/
+ 
   
   body {
     background-image:url('./brige.jpg');
@@ -22,7 +12,7 @@
     margin: 0 auto;
   }
   .logo {
-    display: block;
+        display: block;
     margin: 0 auto;
     width: 100px; 
     border-radius: 50%;
@@ -187,3 +177,50 @@
   .list li:has(input:checked) label:hover::before {
     background: hsl(32, 45%, 34%);
   }
+  .task {
+    margin-bottom: 10px;
+  }
+  
+  .time-section {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .show-time .time-section {
+    display: block;
+  }
+
+  .Data {
+    margin-top: 10px;
+  }
+  
+  .Data button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 10px;
+    cursor: pointer;
+  }
+  
+  .Data button:hover {
+    background-color: #45a049;
+  }
+  
+  .Data div {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .Data div p {
+    margin: 0;
+    padding-bottom: 5px;
+  }
+  
+  .Data div span {
+    font-weight: bold;
+  }  
+ 

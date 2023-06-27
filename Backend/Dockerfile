@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Set the command to run your backend application
-CMD ["npm", "start"]
+CMD ["node", "app"]
