@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   backend:
-    image: backend-image
+    build: ./Backend
     container_name: backend-container
     ports:
       - '3000:3000'
@@ -11,7 +11,7 @@ services:
       - NODE_ENV=development
         
   frontend:
-    image: frontend-image
+    build: ./Frontend
     container_name: frontend-container
     ports:
       - '5173:5173'
