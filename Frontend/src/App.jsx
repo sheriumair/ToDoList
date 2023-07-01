@@ -6,6 +6,8 @@ import './style.css';
 import logo from "/MyPicture.jpg"
 
 import axios from 'axios'
+import NewTodoForm from './NewTodoForm';
+import TodoItem from './TodoItem';
 
 
 
@@ -51,7 +53,7 @@ export default function App(){
           creationTime:new Date().toISOString()  }
             ]})
             
-            setError(null);
+          setError(null);
          setNewItem("");
          setIsLoading(false);
    }catch(error){
@@ -64,15 +66,15 @@ export default function App(){
 
 
 // Function for when the SHOW DETAILS button is pressed
-  const handleDetailsButtonClick = (key) => {
+  /*const handleDetailsButtonClick = (key) => {
     if (visibleDetails.includes(key)) {
       setVisibleDetails(visibleDetails.filter((item) => item !== key));
     } else {
       setVisibleDetails([...visibleDetails, key]);
     }
-  };
+  };*/
   
-  const isDetailsVisible = (key) => visibleDetails.includes(key);
+  //const isDetailsVisible = (key) => visibleDetails.includes(key);
     
   
    // Function for when the Box  button is checked
@@ -99,7 +101,7 @@ export default function App(){
         } else if (todo.completed) {
           // Task is marked as incomplete
           setIsLoading(false);
-          return { ...todo, completed: false };
+          return { ...todo, completed: false,completedTime:null };
         }
       }
       setIsLoading(false);
@@ -129,53 +131,27 @@ export default function App(){
 
       return (
         <> 
-              <img src={logo} alt="Logo" className="logo" />
-             <form onSubmit={handleSubmit} className="new-item_form">
-              <div className="form-row">
-                <input value={newItem} onInput={e=> setNewItem(e.target.value)}
-                type ="text" id ="item" placeholder="Enter task here" />
-              </div>
-              <button className="btn" type="submit" disabled={isLoading}>
-              {isLoading ? 'Adding...' : 'Add'}
-              </button>
-            </form>
-            
-            {isLoading &&
-             <p>Loading...</p>}
-            
-            {error && <p>Error: {error}</p>}
+        <img src={logo} alt="Logo" className="logo" />
+               <NewTodoForm
+        newItem={newItem}
+        setNewItem={setNewItem}
+        handleSubmit={handleSubmit}
+        isLoading={isLoading}
+        error={error}
+      />
 
-            <ul className="list">
-              {todos.length===0 && "Alas! you have nothing to do."}
-                {todos.map(todo=>{
-                  return(
-                  <li key={todo.key} >
-                   <label>
-                    <input type="checkbox" 
-                    checked={todo.completed}
-                    onChange={e=>toggleTodo(todo.key,e.target.values)}
-                    />
-                    {todo.title}
-                    </label>
-                          <div className="task">
-                          <button onClick={()=>deleteTodo(todo.key)}className="btn btn-danger">Delete</button>
-                          </div>
-                          <div className="Data">
-                          <button onClick={() => handleDetailsButtonClick(todo.key)}>Show Details</button>
-                          {isDetailsVisible(todo.key) && (
-                        <div>
-                          Creation Time: {todo.creationTime}<br/>
-                          Completion Time: {todo.completedTime}
-                        </div>
-    )}
-                          </div>
-
-                    
-                </li>)
-                })}
-               
-            </ul>
+      <ul className="list">
+        {todos.length === 0 && <p>Alas! You have nothing to do.</p>}
+        {todos.map(todo => (
+          <TodoItem
+            key={todo.key}
+            todo={todo}
+            toggleTodo={toggleTodo}
+            deleteTodo={deleteTodo}
+          />
+        ))}
+      </ul>
       
          </>   
-         
+      
       )}

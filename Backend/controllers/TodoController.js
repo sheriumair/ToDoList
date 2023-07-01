@@ -5,6 +5,8 @@ const ToDo = require('../models/List.js');
 
 const router = express.Router();
 
+
+//Endpoint for posting the task
 router.post('/todos', async (req, res) => {
   const { task, key } = req.body;
 
@@ -27,6 +29,8 @@ router.post('/todos', async (req, res) => {
   }
 });
 
+
+//Endpoint for deleting the task
 router.delete('/todos/:key', async (req, res) => {
   const prime_key = req.params.key;
 
@@ -43,6 +47,7 @@ router.delete('/todos/:key', async (req, res) => {
   }
 });
 
+//Endpoint for updating the task
 router.put('/todos/:key', async (req, res) => {
   const key = req.params.key;
   const { completed, completedTime } = req.body;

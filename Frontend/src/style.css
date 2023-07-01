@@ -223,4 +223,16 @@
   .Data div span {
     font-weight: bold;
   }  
- 
+  .time {
+    font-size: 10px;;
+    color: #460505;
+    margin-bottom: 5px;
+  }
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button-group button {
+    flex: 1;
+  }
