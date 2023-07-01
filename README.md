@@ -23,7 +23,6 @@ The ToDoList application is a simple web-based task management tool that allows 
 ### Prerequisites
 
 - Docker installed on your machine
-- Docker Compose (optional)
 
 ### Installation and Setup
 
@@ -42,7 +41,7 @@ The ToDoList application is a simple web-based task management tool that allows 
 
 4.  Build and run the Docker containers:
 
-    docker-compose up -d
+    docker-compose up 
 
 
 Your frontend will be available at  **http://localhost:5173.**
