@@ -17,6 +17,7 @@ The ToDoList application is a simple web-based task management tool that allows 
 - Backend: Node.js, Express.js, MongoDB
 - Frontend: React, HTML, CSS
 - Docker: Containerization and deployment
+- Unit Testing: Jest
 
 ## Getting Started
 
@@ -29,19 +30,20 @@ The ToDoList application is a simple web-based task management tool that allows 
 1. Clone the repository:
 
    ```bash
-   [git clone https://github.com/your-username/todo-list.git](https://github.com/sheriumair/ToDoList.git)
+   [git clone https://github.com/sheriumair/todo-list.git](https://github.com/sheriumair/ToDoList.git)
 
 2. Navigate to the Project directory
 
       cd ToDoList
 
-3. Make a .env file for backend. Here add Mongo Db connection URL. The variable name is as shown below
-
-    DB_Connection:
+3. Make a .env file for the backend. Here add Mongo Db connection URL. Example env is added in the repository.
 
 4.  Build and run the Docker containers:
 
     docker-compose up 
+
+5. For unit testing run the following command in the respective directory.
+    npx jest 
 
 
 Your frontend will be available at  **http://localhost:5173.**
