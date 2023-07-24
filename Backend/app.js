@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const mongoose = require('mongoose');
 const todoController = require('./controllers/TodoController');
@@ -20,12 +18,17 @@ app.use((req, res, next) => {
 
 app.use('/api', todoController);
 
+const env=process.env.NODE_ENV;
+const uri = env === 'test' ?
+      process.env.TEST_MONGODB_URI : process.env.MONGODB_URI;
+
 mongoose
-  .connect(process.env.DB_Connection, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected Successfully with the DB'))
-  .catch((err) => {
-    console.error(err);
-  });
+    .connect(uri,
+        {useNewUrlParser: true, useUnifiedTopology: true})
+    .then(() => console.log('Connected Successfully with the DB'))
+    .catch((err) => {
+      console.error(err);
+    });
 
 app.listen(3000, () => {
   console.log(`Server listening on port 3000`);
