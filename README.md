@@ -43,6 +43,7 @@ The ToDoList application is a simple web-based task management tool that allows 
     docker-compose up 
 
 5. For unit testing run the following command in the respective directory.
+
     npx jest 
 
 
